@@ -9,7 +9,14 @@ write.csv(head(df, 20), "results/tables/primeras_20_filas.csv", row.names = FALS
 
 # Figura: scatter simple (base R)
 png("results/figures/scatter_xy.png", width = 800, height = 600)
-plot(df$x, df$y, main = "Scatter x vs y", xlab = "x", ylab = "y", col = "darkred")
+plot(
+  df$x,
+  df$y,
+  main = "Relación entre X e Y (Exploratorio)",
+  xlab = "Variable X",
+  ylab = "Variable Y",
+  col = "steelblue",
+  pch = 19
+)
 dev.off()
-
 message("OK: outputs generados en results/")
