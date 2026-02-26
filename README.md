@@ -1,76 +1,38 @@
 # Taller 4 - Gestión de Proyectos de Investigación (GPI)
 
-Este repositorio contiene el desarrollo completo del flujo de trabajo implementado para el Taller 4 del curso de Gestión de Proyectos de Investigación. El proyecto sigue una estructura modular y organizada por fases, incluyendo simulación, procesamiento, modelado y visualización de datos sintéticos.
+Este repositorio contiene el desarrollo del flujo de trabajo para el Taller 4 del curso de Gestión de Proyectos de Investigación. El objetivo principal es implementar un sistema de análisis de datos reproducible que permita a terceros recrear los resultados de manera idéntica sin intervención de los autores originales.
 
-## Estructura del repositorio
+## Flujo de Trabajo 
 
+El proyecto sigue una estructura lógica dividida en fases de ejecución secuencial:
+
+1. **Infraestructura**: Configuración del entorno reproducible mediante `renv.lock` y control de versiones con Git.
+2. **Entrada de Datos (Stage I)**: Generación de datos sintéticos o carga de datos crudos. Se incluye una lógica de decisión para reconstruir datos o utilizar versiones ya existentes para optimizar el tiempo.
+3. **Procesamiento (Stage II)**: Limpieza automatizada mediante scripts, eliminando cualquier intervención manual en los archivos de datos.
+4. **Análisis y Modelado (Stage III)**: Estimación de modelos estadísticos y generación de perfiles de resultados.
+5. **Visualización y Reporte**: Creación de gráficos y tablas finales para el documento de cierre.
+
+## Estructura del Repositorio
+
+El proyecto se organiza de forma modular para separar la lógica de ejecución de las funciones reutilizables:
+
+```text
 taller4-GPI/
-
-├── README.md
-
-├── transcript\_taller\_4.txt
-
+├── README.md                 # Documentación y proveniencia de datos
+├── transcript_taller_4.txt    # Registro de actividad
 ├── analisis/
-
-│ └── estadisticas.R
-
+│   └── estadisticas.R        # Exploración inicial de datos
 ├── data/
-
-│ ├── raw/
-
-│ │ └── datos\_sinteticos.csv
-
-│ └── processed/
-
-│ └── resumen.csv
-
+│   ├── raw/                  # Datos crudos o sintéticos originales
+│   └── processed/            # Datos limpios y procesados
 ├── results/
-
-│ ├── figures/
-
-│ │ └── scatter\_xy.png
-
-│ └── tables/
-
-│ ├── primeras\_20\_filas.csv
-
-│ ├── resultados\_modelo.csv
-
-│ └── metricas\_modelo.csv
-
-├── scripts/
-
-│ ├── 01\_simulacion.R
-
-│ ├── 02\_analisis.R
-
-│ ├── 03\_visualizacion.R
-
-│ └── 04\_modelado.R
-
-└── src/
-
-├── simulacion.R
-
-└── utilidades.R
-
-
-## Flujo de trabajo
-
-
-El proyecto está organizado en fases:
-
-
-1\. \*\*Simulación\*\*: Generación de datos sintéticos.
-
-2\. \*\*Análisis\*\*: Procesamiento y estadísticas descriptivas.
-
-3\. \*\*Visualización\*\*: Creación de gráficos y tablas.
-
-4\. \*\*Modelado\*\*: Estimación de un modelo de regresión lineal y exportación de métricas.
-
-La separación entre `src/` y `scripts/` permite mantener funciones reutilizables independientes de los scripts de ejecución, siguiendo buenas prácticas de modularidad y reproducibilidad.
-
-
-
-
+│   ├── figures/              # Gráficos y visualizaciones finales
+│   └── tables/               # Resultados del modelo y tablas resumen
+├── scripts/                  # Scripts de ejecución secuencial (01 a 04)
+│   ├── 01_simulacion.R
+│   ├── 02_analisis.R
+│   ├── 03_visualizacion.R
+│   └── 04_modelado.R
+└── src/                      # Funciones generales y personalizadas
+    ├── simulacion.R
+    └── utilidades.R
