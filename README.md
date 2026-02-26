@@ -1,12 +1,12 @@
-\# Taller 4 - Gestión de Proyectos de Investigación (GPI)
+# Taller 4 - Gestión de Proyectos de Investigación (GPI)
 
 
 
 Este repositorio contiene el desarrollo completo del flujo de trabajo implementado para el Taller 4 del curso de Gestión de Proyectos de Investigación. El proyecto sigue una estructura modular y organizada por fases, incluyendo simulación, procesamiento, modelado y visualización de datos sintéticos.
 
+--
 
-
-\## Estructura del repositorio
+## Estructura del repositorio
 
 
 
@@ -60,9 +60,9 @@ taller4-GPI/
 
 └── utilidades.R
 
+--
 
-
-\## Flujo de trabajo
+## Flujo de trabajo
 
 
 El proyecto está organizado en fases:
